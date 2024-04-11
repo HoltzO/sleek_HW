@@ -19,21 +19,11 @@ for filename in all_files:
     i += 1
 
 data = pd.concat(all_f, axis=0, ignore_index=True)
+data.to_csv(path+'data_all.csv', index=False)
 
 
-print(data.columns)
 
-data.head()
-data.describe().round()
-data[" Label"].unique()
 
-plt.figure(figsize=(8, 8))
-palette_color = sns.color_palette('pastel')
-explode = [0.1]*len(data[" Label"].unique())
-class_counts = data[' Label'].value_counts()
-
-plt.hist(data[' Label'])
-plt.xticks(rotation=30)
 
 
 
